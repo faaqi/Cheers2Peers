@@ -1,11 +1,10 @@
 class Recognition {
-
   Recognition({
     this.from,
     this.to,
     this.points,
-    this.postTime;
-});
+    this.postTime,
+  });
 
   String from;
   String to;
