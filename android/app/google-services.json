@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "427605975586",
+    "firebase_url": "https://appconn-telenor.firebaseio.com",
+    "project_id": "appconn-telenor",
+    "storage_bucket": "appconn-telenor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427605975586:android:ef460daf5129166708e07b",
+        "android_client_info": {
+          "package_name": "com.circluardev.cheers2peers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427605975586-fe6q5u3iaonokvkaro9lu0iudh5asavv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPO7SGuPBlop3I3j7sJPy4S7dzM1zJubQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427605975586-fe6q5u3iaonokvkaro9lu0iudh5asavv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
