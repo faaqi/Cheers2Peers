@@ -31,7 +31,7 @@ class _SelectEmployeeState extends State<SelectEmployee> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, HomeScreen.routeName);
+            Navigator.pop(context);
           },
           icon: Icon(
             Icons.arrow_back,
@@ -103,6 +103,11 @@ class _SelectEmployeeState extends State<SelectEmployee> {
                               .setImg
                               .value
                               .imageAddress = document['imgUri'];
+
+                          Get.put(SelectedEmpController())
+                              .setEmail
+                              .value
+                              .email = document['id'];
 
                           Navigator.pushNamed(
                               context, SelectRecognition.routeName);

@@ -1,13 +1,25 @@
 class Recognition {
   Recognition({
-    this.from,
-    this.to,
+    this.fromEmail,
+    this.toEmail,
+    this.fromName,
+    this.toName,
     this.points,
-    this.postTime,
+    this.postTitle,
+    this.time,
+    this.likes = 0,
+    this.fromImgAddress,
+    this.fromJob,
   });
 
-  String from;
-  String to;
+  String fromJob;
+  String fromImgAddress;
+  int likes;
+  String time;
+  String fromEmail;
+  String toEmail;
+  String postTitle;
+  String fromName;
+  String toName;
   int points;
-  String postTime;
 }

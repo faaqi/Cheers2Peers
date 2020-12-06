@@ -24,7 +24,7 @@ class _ImageUploadState extends State<ImageUpload> {
 
   Future<void> _PickImage(ImageSource source) async {
     IO.File selected = await ImagePicker.pickImage(
-        source: source, maxWidth: 400, maxHeight: 400);
+        source: source, maxWidth: 300, maxHeight: 300, imageQuality: 50);
 
     setState(() {
       _imageFile = selected;

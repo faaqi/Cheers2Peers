@@ -1,4 +1,5 @@
 import 'package:cheers2peers/Tabs/Home.dart';
+import 'package:cheers2peers/Tabs/Leaderboard.dart';
 import 'package:cheers2peers/screens/AdminLogin.dart';
 import 'package:cheers2peers/screens/Admin_Dashboard.dart';
 import 'package:cheers2peers/screens/EmpLogin.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         ImageUpload.routeName: (ctx) => ImageUpload(),
         SelectEmployee.routeName: (ctx) => SelectEmployee(),
         SelectRecognition.routeName: (ctx) => SelectRecognition(),
+        Leaderboard.routeName: (ctx) => Leaderboard(),
       },
     );
   }

@@ -9,6 +9,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:cheers2peers/classes/person.dart';
 import 'package:cheers2peers/controllers/DataController.dart';
+import 'package:cheers2peers/components/CheerCard.dart';
 
 class Home extends StatelessWidget {
   static const routeName = "/home_tab";
@@ -32,6 +33,7 @@ class Home extends StatelessWidget {
     final deviceHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+      backgroundColor: Color(0xFFececec),
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(25.0),
         child: FloatingActionButton(
@@ -53,7 +55,7 @@ class Home extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                top: deviceHeight * 0.015,
+                top: deviceHeight * 0.02,
                 left: deviceWidth * 0.04,
                 right: deviceWidth * 0.04,
               ),
@@ -115,7 +117,11 @@ class Home extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: deviceHeight * 0.015),
+              padding: EdgeInsets.only(
+                top: deviceHeight * 0.015,
+                left: deviceWidth * 0.03,
+                right: deviceWidth * 0.03,
+              ),
               child: Card(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +140,7 @@ class Home extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(
-                        horizontal: deviceWidth * 0.13,
+                        horizontal: deviceWidth * 0.1,
                         vertical: deviceHeight * 0.008,
                       ),
                       child: RatingBar.builder(
@@ -180,6 +186,74 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: deviceHeight * 0.01,
+                left: deviceWidth * 0.06,
+              ),
+              child: Text(
+                "Recognitions",
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                  fontSize: deviceWidth * 0.05,
+                ),
+              ),
+            ),
+            StreamBuilder<QuerySnapshot>(
+              stream: _firestore.collection('Recognitions').snapshots(),
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
+                  print("Snapshot rcvd");
+                  final data = snapshot.data.docs;
+                  List<CheerCard> cheerPosts = [];
+
+                  for (var text in data) {
+                    final _postTitle = text.data()['postTitle'];
+                    final _fromImgAddress = text.data()['fromImgAddress'];
+                    final _fromName = text.data()['fromName'];
+                    final _fromJob = text.data()['fromJob'];
+                    final _time = text.data()['time'];
+                    final _toName = text.data()['toName'];
+                    final _likes = text.data()['likes'];
+                    final _points = text.data()['points'];
+
+                    print(cheerPosts.toString());
+
+                    final cheerCardWiget = CheerCard(
+                      deviceWidth: deviceWidth,
+                      deviceHeight: deviceHeight,
+                      fromImgAddress: _fromImgAddress,
+                      fromName: _fromName,
+                      fromJob: _fromJob,
+                      toName: _toName,
+                      postTitle: _postTitle,
+                      points: _points,
+                      likes: _likes,
+                      time: _time,
+                    );
+                    cheerPosts.add(cheerCardWiget);
+                    cheerPosts.sort((a, b) => DateTime.parse(b.time)
+                        .compareTo(DateTime.parse(a.time)));
+                  }
+                  return Container(
+                    height: deviceHeight * 0.6,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 3.0,
+                      ),
+                      child: ListView(
+                        children: cheerPosts,
+                      ),
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),

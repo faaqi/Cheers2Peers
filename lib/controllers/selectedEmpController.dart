@@ -5,8 +5,9 @@ class SelectedEmpController extends GetxController {
   final setName = Person().obs;
   final setJob = Person().obs;
   final setImg = Person().obs;
+  final setEmail = Person().obs;
 
-  updateValues(String _name, String _job, String img) {
+  updateValues(String _name, String _job, String img, String _email) {
     setName.update((val) {
       val.name = _name;
     });
@@ -17,6 +18,10 @@ class SelectedEmpController extends GetxController {
 
     setImg.update((val) {
       val.imageAddress = img;
+    });
+
+    setEmail.update((val) {
+      val.email = _email;
     });
   }
 }

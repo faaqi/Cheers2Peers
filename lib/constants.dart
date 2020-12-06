@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 
-
 String storageRefURL = 'gs://appconn-telenor.appspot.com';
 
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   hintText: 'Type your message here...',
-  border: InputBorder.none,
+  border: OutlineInputBorder(
+    borderRadius: const BorderRadius.all(
+      const Radius.circular(30.0),
+    ),
+  ),
 );
 
 const kSendButtonTextStyle = TextStyle(
-  color: Colors.lightBlueAccent,
+  color: Colors.green,
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
 );
 
 const kMessageContainerDecoration = BoxDecoration(
   border: Border(
-    top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+    top: BorderSide(color: Colors.green, width: 2.0),
   ),
 );
 
