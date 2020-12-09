@@ -11,6 +11,7 @@ This project is a portfolio for my flutter app development skills.
 3) Admin of the company can view the employees and also the leaderboard of his company.
 4) Employees can chat with other employees in the Group Chat tab.
 
+
 ## Backend
 
 Backend of the app is on Firebase.
