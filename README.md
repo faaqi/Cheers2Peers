@@ -1,6 +1,6 @@
 # cheers2peers
 
-A new Flutter application for the comany emloyees to cheer their peers for thier perfomance in the company environment,
+A new Flutter application for the comany emloyees to cheer their peers for their perfommance in the company environment.
 
 ## App Details
 
