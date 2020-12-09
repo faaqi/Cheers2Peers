@@ -1,16 +1,24 @@
 # cheers2peers
 
-A new Flutter application.
+A new Flutter application for the comany emloyees to cheer their peers for thier perfomance in the company environment,
 
-## Getting Started
+## App Details
 
-This project is a starting point for a Flutter application.
+This project is a portfolio for my flutter app development skills. 
 
-A few resources to get you started if this is your first Flutter project:
+1) Employees can register using their company mail to register on platform. 
+2) Employees can give cheers to their peers for various type of works like : Helping Hand , Community work , Task Finisher and problem solving stc.
+3) Admin of the company can view the employees and also the leaderboard of his company.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Backend
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Backend of the app is on Firebase.
+- Firebase Auth is used for Signup and Login with mail.
+- Firebase Cloud Firestore is used for the NoSql database.
+- Firebase Storage is used for saving pictures of employees.
+
+## State Management :
+
+- GetX is used for the state management in the app.
+
+
